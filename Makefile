@@ -65,3 +65,18 @@ dci-prisma-studio: ## Open Prisma Studio
 
 dci-prisma-generate: ## Generate Prisma Client
 	docker exec -it medflow-backend npx prisma generate --schema=./prisma/schemas/schema.prisma
+
+
+# Git Commands
+
+# Pulls the main repo and it's submodules
+git-spull: ## Smart pull - update main repo and all submodules
+	@echo "📥 Pulling main repository..."
+	@git pull origin main
+	@echo ""
+	@echo "📥 Updating submodules..."
+	@git submodule update --remote --merge
+	@echo ""
+	@echo "✅ All repositories updated!"
+	@echo ""
+	@git submodule status

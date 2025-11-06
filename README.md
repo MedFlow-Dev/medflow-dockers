@@ -46,6 +46,8 @@ make dcidown             # Stop all containers
 make dci-logs            # Show logs
 make dci-clean           # Stop and remove volumes
 make dci-ps              # Show running containers
+
+make git-spull		 # Pulls the latest version of the mothe repo and it's submodules
 ```
 
 ## URLs

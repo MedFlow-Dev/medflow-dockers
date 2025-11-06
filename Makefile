@@ -8,7 +8,7 @@ help: ## Show this help message
 
 dciup-dev: ## Build and start all containers
 	@echo "Building and starting containers..."
-	@docker-compose up -d --build 
+	@docker-compose up -d --build > /dev/null 2>&1
 	@echo "✅ Containers are ready!"
 
 dci-api-shell: ## Enter the API container shell

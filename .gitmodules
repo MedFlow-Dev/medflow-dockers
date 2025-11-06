@@ -1,0 +1,6 @@
+[submodule "backend.medflow.com"]
+	path = backend.medflow.com
+	url = git@github.com:MedFlow-Dev/backend.medflow.com.git
+[submodule "www.medflow.com"]
+	path = www.medflow.com
+	url = git@github.com:MedFlow-Dev/www.medflow.com.git

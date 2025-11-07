@@ -7,9 +7,13 @@ help: ## Show this help message
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
 dciup-dev: ## Build and start all containers
-	@echo "Building and starting containers..."
+	@echo "🧹 Cleaning up existing containers..."
+	@docker-compose down > /dev/null 2>&1 || true
+	@docker rm -f medflow-postgres medflow-backend medflow-frontend > /dev/null 2>&1 || true
+	@echo "🐳 Building and starting containers..."
 	@docker-compose up -d --build > /dev/null 2>&1
 	@echo "✅ Containers are ready!"
+
 
 dci-api-shell: ## Enter the API container shell
 	@echo "Entering API container..."
